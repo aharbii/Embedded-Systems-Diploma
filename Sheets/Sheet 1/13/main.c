@@ -35,6 +35,11 @@ int main()
     // Variable contains final result, initialized to 0
     int sum = 0;
 
+    if (number == 0)
+    {
+        int holes_value = 1;
+        sum += holes_value;
+    }
     // Getting reminder of division number by 10 to get digit, then divide it by 10 to remove this digit.
     while (number > 0)
     {
