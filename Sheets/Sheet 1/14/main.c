@@ -1,7 +1,7 @@
 /******************************************************************************
  * Sheet.01
  * 
- * Problem.08:
+ * Problem.14:
  *      --> Write a program that reads n and prints n prime numbers.
  * 
  * @author: Ahmed Harbi
