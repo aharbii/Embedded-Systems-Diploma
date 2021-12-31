@@ -39,7 +39,7 @@ int main()
             // Reseting error counter to 0
             error_counter = 0;
             sum += number;
-            printf("Sum = %d\n", number);
+            printf("Sum = %d\n", sum);
         }
     }
 
