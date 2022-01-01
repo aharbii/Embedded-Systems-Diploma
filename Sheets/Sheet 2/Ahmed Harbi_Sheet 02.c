@@ -385,9 +385,7 @@ int main()
                 printf("\n");
 
                 printf("Clearing bit.....\n");
-                bit = 0xFFFFFFFF;
-                unsigned int clear = 1 << bit_position;
-                bit ^= clear;
+                bit = ~(1 << bit_position);
                 number &= bit;
 
                 printf("%d -> 0b", number);
