@@ -391,6 +391,7 @@ void array_merge(int *first_array, int first_size, int *second_array, int second
     {
         merged[k++] = first_array[i++];
     }
+
     while (j < second_size)
     {
         merged[k++] = second_array[j++];
@@ -964,4 +965,79 @@ void array_remove_duplicate_sorted(int *array_ptr, int *size)
             i--;
         }
     }
+}
+
+void array_swap_after_zero(int *array_ptr)
+{
+    int i = 0;
+    while (array_ptr[i] != 0)
+    {
+        i++;
+    }
+    int j = i + 1;
+
+    while (array_ptr[j] != 0)
+    {
+        j++;
+    }
+
+    for (int k = 0; k < 3; k++)
+    {
+        swap(&array_ptr[++i], &array_ptr[++j]);
+    }
+    
+}
+
+int array_get_greatest_difference(const int *array_ptr, const int *size)
+{
+    int min = array_get_min(array_ptr, size);
+    int index = 0;
+    
+    while (array_ptr[index] != min)
+    {
+        index++;
+    }
+
+    int new_size = *size - 1;
+
+    if (index == (*size - 1))
+    {
+        return array_get_greatest_difference(array_ptr, &new_size);
+    }
+    
+    new_size = *size - index;
+    int max = array_get_max(&array_ptr[index], &new_size);
+    int greatest_diff = max - min;
+
+    return greatest_diff;   
+}
+
+int array_get_max_index(const int *array_ptr, const int *size)
+{
+    /* O(n) */
+    int max = array_ptr[0];
+    int index = 0;
+    for (int i = 1; i < *size; i++)
+    {
+        if (max < array_ptr[i])
+        {
+            max = array_ptr[i];
+            index = i;
+        }
+    }
+    return index;
+}
+
+char array_get_most_repeated_character(const char *array_ptr, const int *size)
+{
+    int hash_table[128] = {0};
+    for (int i = 0; i < *size; i++)
+    {
+        hash_table[(int) array_ptr[i]] += 1;
+    }
+
+    int hash_size = 128;
+    char most_repeated = array_get_max_index(hash_table, &hash_size);
+
+    return most_repeated;   
 }

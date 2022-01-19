@@ -34,9 +34,26 @@ int main()
     // merge_array(first_array, ARRAY_SIZE(first_array), second_array, ARRAY_SIZE(second_array), merged, &merged_size);
     // array_print(merged, merged_size);
 
-    int array[] = {1, 2, 2, 3, 3, 3, 3 , 4, 4, 4, 4, 3, 3};
-    int size = 13;
-    array_remove_duplicate_sorted(array, &size);
-    array_print(array, &size);
+    // int array[] = {1, 2, 2, 3, 3, 3, 3 , 4, 4, 4, 4, 3, 3};
+    // int size = 13;
+    // array_remove_duplicate_sorted(array, &size);
+    // array_print(array, &size);
+
+    int x = 0;
+    int *p = &x;
+    int y = 1;
+    int *t = &y;
+    printf("%d\n", p);
+    printf("%d\n", *p);
+    printf("%d\n", t);
+    printf("%d\n", *t);
+
+    swap_ptr(&p, &t);
+    printf("%d\n", p);
+    printf("%d\n", *p);
+    printf("%d\n", t);
+    printf("%d\n", *t);
+
+
     return 0;
 }
