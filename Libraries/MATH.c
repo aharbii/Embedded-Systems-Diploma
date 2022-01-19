@@ -34,3 +34,21 @@ void swap(int *a, int *b)
     *b = *b - *a;
 }
 
+int is_powerof_three(int number)
+{
+    int reminder = 0;
+    while (number > 1)
+    {
+        reminder = number % 3;
+        number /= 3;
+    }
+
+    if ((reminder == 0) && (number != 0))
+    {
+        return 1;
+    }
+
+    return 0;
+    
+    
+}
