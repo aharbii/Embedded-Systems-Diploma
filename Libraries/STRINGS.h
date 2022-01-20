@@ -1,6 +1,12 @@
 #ifndef _STRINGS_H_
 #define _STRINGS_H_
 
+#define LOWER_TO_UPPER_DIFF 'a' - 'A'
+#define LOWER_ALPHA_START 97
+#define UPPER_ALPHA_START 65
+#define MAX_ASCII 128
+#define ALPHABIT_COUNT 26
+
 int char_is_digit(char c);
 int char_is_lower(char c);
 int char_is_upper(char c);
@@ -19,6 +25,13 @@ void string_count_vowels_consonents(char *s);
 void string_reverse(char *s);
 void swap(char *a, char *b);
 void string_reverse_swap(char *s);
+int string_compare(char *first_string, char *second_string);
+int string_is_palindrome(char *s);
+void string_print_duplicate(char *s);
+void string_print_duplicate_hashing(char *s);
+void string_print_duplicate_bitwise(char *s);
 int string_are_anagram(char *first_string, char *second_string);
+void string_print_permutation(char *s, int l, int h);
+void string_print_permutation_recursive(char *s, int k);
 
 #endif
