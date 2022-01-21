@@ -23,7 +23,7 @@ int string_count_words(char *s);
 int string_is_valid(char *s);
 void string_count_vowels_consonents(char *s);
 void string_reverse(char *s);
-void swap(char *a, char *b);
+void char_swap(char *a, char *b);
 void string_reverse_swap(char *s);
 int string_compare(char *first_string, char *second_string);
 int string_is_palindrome(char *s);

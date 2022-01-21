@@ -184,7 +184,7 @@ void string_reverse(char *s)
     s[j] = '\0';
 }
 
-void swap(char *a, char *b)
+void char_swap(char *a, char *b)
 {
     char temp = *a;
     *a = *b;
@@ -196,7 +196,7 @@ void string_reverse_swap(char *s)
     int j = string_get_len(s) - 1;
     for (int i = 0; i < j; i++, j--)
     {
-        swap(&s[i], &s[j]);
+        char_swap(&s[i], &s[j]);
     }
 }
 
@@ -372,9 +372,9 @@ void string_print_permutation(char *s, int l, int h)
     {
         for (int i = l; s[i] != '\0'; i++)
         {
-            swap(&s[l], &s[i]);
+            char_swap(&s[l], &s[i]);
             string_print_permutation(s, l + 1, h);
-            swap(&s[l], &s[i]);
+            char_swap(&s[l], &s[i]);
         }
     }
 }

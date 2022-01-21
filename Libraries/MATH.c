@@ -183,4 +183,5 @@ int get_most_repeated_mono(void)
             return -1;
         }
     }
+    return max;
 }
