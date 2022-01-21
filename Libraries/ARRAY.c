@@ -298,18 +298,9 @@ void array_swap(int *first_array, int *first_size, int *second_array, int *secon
     }
     else
     {
-        temp_size = *second_size;
-        for (int i = 0; i < *second_size; i++)
-        {
-            temp[i] = second_array[i];
-        }
-        for (int j = 0; j < *first_size; j++)
-        {
-            second_array[j] = first_array[j];
-        }
         for (int i = 0; i < *first_size; i++)
         {
-            first_array[i] = temp[i];
+            swap(&first_array[i], &second_array[i]);
         }
     }
 }
