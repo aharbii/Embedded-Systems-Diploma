@@ -57,5 +57,6 @@ void array_swap_after_zero(int *array_ptr);
 int array_get_greatest_difference(const int *array_ptr, const int *size);
 int array_get_max_index(const int *array_ptr, const int *size);
 char array_get_most_repeated_character(const char *array_ptr, const int *size);
+int array_get_most_repeated_mono(const int *array_ptr, const int *size);
 
 #endif

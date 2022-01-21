@@ -1041,3 +1041,18 @@ char array_get_most_repeated_character(const char *array_ptr, const int *size)
 
     return most_repeated;   
 }
+
+int array_get_most_repeated_mono(const int *array_ptr, const int *size)
+{
+    int hash_table[10] = {0};
+    for (int i = 0; i < *size; i++)
+    {
+        hash_table[array_ptr[i]] += 1;
+    }
+
+    int hash_size = 10;
+    int max = array_get_max_index(hash_table, &hash_size);
+
+    return max;
+    
+}
