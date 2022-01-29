@@ -399,7 +399,7 @@ void string_scan(char *s, int size)
     {
         scanf("%c", &s[i]);
     } while (s[i++] != '\n');
-    s[i] = '\0';
+    s[i - 1] = '\0';
 }
 
 void string_print(char *s)
