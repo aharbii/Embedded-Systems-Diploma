@@ -203,37 +203,25 @@ void string_reverse_swap(char *s)
 int string_compare(char *first_string, char *second_string)
 {
     int i = 0;
-    int char_is_equal = 1;
-    while ((first_string[i] != '\0') && (second_string[i] != '\0') && (char_is_equal))
+    while ((first_string[i] != '\0') && (second_string[i] != '\0'))
     {
         char first_char = first_string[i];
         char second_char = second_string[i];
 
-        if (char_is_upper(first_char))
-        {
-            char_to_lower(&first_char);
-        }
-
-        if (char_is_upper(second_char))
-        {
-            char_to_lower(&second_char);
-        }
+        char_to_lower(&first_char);
+        char_to_lower(&second_char);
 
         if (first_char != second_char)
         {
-            char_is_equal = 0;
+            return 0;
         }
+
         i++;
     }
-    if (char_is_equal)
-    {
-        return 1;
-    }
-    else
+    if (first_string[i] || second_string[i])
     {
         return 0;
     }
-
     return 1;
 }
 
@@ -401,4 +389,201 @@ void string_print_permutation_recursive(char *s, int k)
             }
         }
     }
+}
+
+void string_scan(char *s, int size)
+{
+    s[0] = 'a';
+    printf("Enter string, maximum length is %d: ", size);
+    scanf("%c", &s[0]);
+    int i;
+    for (i = 1; s[i - 1] != '\n'; i++)
+    {
+        scanf("%c", &s[i]);
+    }
+    s[i - 1] = '\0';
+}
+
+void string_print(char *s)
+{
+    for (int i = 0; s[i] != '\0'; i++)
+    {
+        printf("%c", s[i]);
+    }
+    printf("\n");
+}
+
+int string_shift_word(char *s, int length, int shift_position)
+{
+    int i = length;
+    char terminator = ' ';
+    int counter = shift_position;
+    do
+    {
+        char char_to_shift = s[i];
+        counter++;
+        for (int j = i; j >= shift_position; j--)
+        {
+            s[j + 1] = s[j];
+        }
+        s[shift_position] = char_to_shift;
+    } while (s[i] != terminator);
+    shift_position = counter;
+    return shift_position;
+}
+
+void string_reverse_words(char *s)
+{
+    int string_length = string_get_len(s);
+    int word_count = string_count_words(s);
+    s[string_length] = ' ';
+    s[string_length + 1] = '\0';
+    int shift_position = 0;
+    while (word_count > 1)
+    {
+        shift_position = string_shift_word(s, string_length, shift_position);
+        word_count--;
+    }
+
+    s[string_length] = '\0';
+}
+
+void string_to_lengths(char *s, int *length_array)
+{
+    int j = 0;
+    for (int i = 0; s[i] != '\0'; i++)
+    {
+        int current_digit = 0;
+        if (char_is_digit(s[i]))
+        {
+            current_digit = digits[s[i] - DIGIT_START];
+            length_array[j] *= DECIMAL_BASE;
+            length_array[j] += current_digit;
+        }
+        else
+        {
+            j++;
+        }
+    }
+}
+
+void string_copy(char *first_string, char *second_string)
+{
+    int i;
+    for (i = 0; second_string[i] != '\0'; i++)
+    {
+        first_string[i] = second_string[i];
+    }
+    first_string[i] = '\0';
+}
+
+int string_find(char *main_string, char *find)
+{
+    int index = -1;
+    int j = 0;
+    int find_len = string_get_len(find);
+    for (int i = 0; main_string[i] != '\0'; i++)
+    {
+        char in_word = main_string[i];
+        char to_compare = find[j];
+
+        char_to_lower(&in_word);
+        char_to_lower(&to_compare);
+
+        if (in_word == to_compare)
+        {
+            j++;
+            if (j == find_len)
+            {
+                index = i - find_len + 1;
+                return index;
+            }
+        }
+        else
+        {
+            j = 0;
+        }
+    }
+    return index;
+}
+
+int string_replace(char *main_string, char *find, char *replace)
+{
+    int main_len = string_get_len(main_string);
+    int find_len = string_get_len(find);
+    int replace_len = string_get_len(replace);
+
+    int replace_index = string_find(main_string, find);
+    int diff = replace_len - find_len;
+
+    if (replace_index >= 0)
+    {
+        if (diff > 0)
+        {
+            for (int i = main_len; i >= replace_index; i--)
+            {
+                main_string[i + diff] = main_string[i];
+            }
+        }
+        else if (diff < 0)
+        {
+            diff *= -1;
+            for (int i = replace_index; i <= (main_len - diff); i++)
+            {
+                main_string[i] = main_string[i + diff];
+            }
+        }
+
+        int j = 0;
+        int i = replace_index;
+
+        while (i < (replace_len + replace_index))
+        {
+            main_string[i++] = replace[j++];
+        }
+        return 1;
+    }
+    return 0;
+}
+
+void string_separate(char *text, char text_separated[4][1000])
+{
+    char terminator = ',';
+    int j = 0;
+    int k = 0;
+    for (int i = 0; text[i] != '\0'; i++)
+    {
+        if (text[i] == terminator)
+        {
+            text_separated[j][k] = '\0';
+            k = 0;
+            j++;
+        }
+        else
+        {
+            text_separated[j][k++] = text[i];
+        }
+    }
+}
+
+int string_to_integer(char *s)
+{
+    int j = 0;
+    int value = 0;
+
+    for (int i = 0; s[i] != '\0'; i++)
+    {
+        int current_digit = 0;
+        if (char_is_digit(s[i]))
+        {
+            current_digit = digits[s[i] - DIGIT_START];
+            value *= DECIMAL_BASE;
+            value += current_digit;
+        }
+        else
+        {
+            j++;
+        }
+    }
+    return value;
 }
