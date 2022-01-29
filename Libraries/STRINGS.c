@@ -393,15 +393,13 @@ void string_print_permutation_recursive(char *s, int k)
 
 void string_scan(char *s, int size)
 {
-    s[0] = 'a';
     printf("Enter string, maximum length is %d: ", size);
-    scanf("%c", &s[0]);
-    int i;
-    for (i = 1; s[i - 1] != '\n'; i++)
+    int i = 0;
+    do
     {
         scanf("%c", &s[i]);
-    }
-    s[i - 1] = '\0';
+    } while (s[i++] != '\n');
+    s[i] = '\0';
 }
 
 void string_print(char *s)

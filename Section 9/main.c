@@ -57,13 +57,12 @@ void string_print(char *s)
 void string_scan(char *s, int size)
 {
     printf("Enter string, maximum length is %d: ", size);
-    scanf("%c", &s[0]);
-    int i;
-    for (i = 1; s[i - 1] != '\n'; i++)
+    int i = 0;
+    do 
     {
         scanf("%c", &s[i]);
-    }
-    s[i - 1] = '\0';
+    } while(s[i++] != '\n');
+    s[i] = '\0';
 }
 
 int char_is_upper(char c)
@@ -110,10 +109,10 @@ int string_compare(char *first_string, char *second_string)
     return 1;
 }
 
-int s
-
 int main()
 {
-    printf("%s\n", string_compare("Ahmed", "Ahmed Harbi") ? "Strings are same" : "Strings are different");
+    char text[1000] = {0};
+    string_scan(text, 1000);
+    string_print(text);
     return 0;
 }
