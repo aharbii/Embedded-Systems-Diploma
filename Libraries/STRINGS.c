@@ -454,7 +454,7 @@ void string_to_lengths(char *s, int *length_array)
         int current_digit = 0;
         if (char_is_digit(s[i]))
         {
-            current_digit = digits[s[i] - DIGIT_START];
+            current_digit = s[i] - DIGIT_START;
             length_array[j] *= DECIMAL_BASE;
             length_array[j] += current_digit;
         }
@@ -566,21 +566,15 @@ void string_separate(char *text, char text_separated[4][1000])
 
 int string_to_integer(char *s)
 {
-    int j = 0;
     int value = 0;
-
     for (int i = 0; s[i] != '\0'; i++)
     {
         int current_digit = 0;
         if (char_is_digit(s[i]))
         {
-            current_digit = digits[s[i] - DIGIT_START];
+            current_digit = s[i] - DIGIT_START;
             value *= DECIMAL_BASE;
             value += current_digit;
-        }
-        else
-        {
-            j++;
         }
     }
     return value;

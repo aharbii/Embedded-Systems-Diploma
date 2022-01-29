@@ -11,7 +11,7 @@
 #define DECIMAL_BASE 10
 #define FLOAT_PRECISION 6
 
-int digits[DIGIT_COUNT] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
 
 int char_is_digit(char c);
 int char_is_lower(char c);

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "ARRAY.h"
+#include "STRINGS.h"
 
 int main()
 {
@@ -26,5 +27,6 @@ int main()
     
     printf("\n==============================================\n\n");
 
+    printf("%d\n", string_to_integer("1239as12"));
     return 0;
 }
