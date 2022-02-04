@@ -619,8 +619,6 @@ void array_rearrange(int *array_ptr, int *size)
 void array_union(const int *first_array, const int *first_size, const int *second_array, const int *second_size, int *array_ptr, int *size)
 {
     /* O(n^2) */
-    int i = 0;
-    int j = 0;
     int k = 0;
     *size = 0;
     for (int i = 0; i < *first_size; i++)
@@ -956,7 +954,6 @@ void array_pair_with_sum_sorted(const int *array_ptr, const int *size, int sum)
 void array_remove_duplicate_sorted(int *array_ptr, int *size)
 {
     /* O(n) */
-    int duplicated = 0;
     for (int i = 1; i < *size; i++)
     {
         if (array_ptr[i] == array_ptr[i - 1])

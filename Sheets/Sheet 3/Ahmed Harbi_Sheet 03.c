@@ -581,98 +581,16 @@ int fibonacci_iter(int n)
  * @date:   Jan 19th, 2022
  ******************************************************************************/
 
-int get_most_repeated_mono(void)
+int array_get_most_repeated_mono(const int *array_ptr, const int *size)
 {
-    int zero = 0;
-    int one = 0;
-    int two = 0;
-    int three = 0;
-    int four = 0;
-    int five = 0;
-    int six = 0;
-    int seven = 0;
-    int eight = 0;
-    int nine = 0;
-
-    int max = 0;
-    printf("Enter 10 mono numbers (0 -> 9): ");
-    int n = 0;
-    for (int i = 0; i < 10; i++)
+    int hash_table[10] = {0};
+    for (int i = 0; i < *size; i++)
     {
-        scanf("%d", &n);
-
-        switch (n)
-        {
-        case 0:
-            zero++;
-            if (zero > max)
-                max = zero;
-            break;
-        case 1:
-            one++;
-            if (one > max)
-            {
-                max = one;
-            }
-            break;
-        case 2:
-            two++;
-            if (two > max)
-            {
-                max = two;
-            }
-            break;
-        case 3:
-            three++;
-            if (three > max)
-            {
-                max = three;
-            }
-            break;
-        case 4:
-            four++;
-            if (four > max)
-            {
-                max = four;
-            }
-            break;
-        case 5:
-            five++;
-            if (five > max)
-            {
-                max = five;
-            }
-            break;
-        case 6:
-            six++;
-            if (six > max)
-            {
-                max = six;
-            }
-            break;
-        case 7:
-            seven++;
-            if (seven > max)
-            {
-                max = seven;
-            }
-            break;
-        case 8:
-            eight++;
-            if (eight > max)
-            {
-                max = eight;
-            }
-            break;
-        case 9:
-            nine++;
-            if (nine > max)
-            {
-                max = nine;
-            }
-            break;
-        default:
-            return -1;
-        }
+        hash_table[array_ptr[i]] += 1;
     }
+
+    int hash_size = 10;
+    int max = array_get_max_index(hash_table, &hash_size);
+
+    return max;
 }

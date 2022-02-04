@@ -79,7 +79,7 @@ int fibonacci_iter(int n)
     {
         return n;
     }
-    int s;
+    int s = 0;
     for (int i = 2; i <= n; i++)
     {
         s = t0 + t1;

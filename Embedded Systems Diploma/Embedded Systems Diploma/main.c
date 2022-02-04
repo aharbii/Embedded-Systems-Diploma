@@ -6,9 +6,13 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
+#include "ARRAY.h"
+#include "MATH.h"
+#include "STRINGS.h"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+int main()
+{
+    
     return 0;
 }

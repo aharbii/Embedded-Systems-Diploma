@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6A89A1CB27A9866B0094D112 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 6A89A1CA27A9866B0094D112 /* main.c */; };
+		6A89A1D727A986D10094D112 /* ARRAY.c in Sources */ = {isa = PBXBuildFile; fileRef = 6A89A1D127A986D10094D112 /* ARRAY.c */; };
+		6A89A1D827A986D10094D112 /* STRINGS.c in Sources */ = {isa = PBXBuildFile; fileRef = 6A89A1D527A986D10094D112 /* STRINGS.c */; };
+		6A89A1D927A986D10094D112 /* MATH.c in Sources */ = {isa = PBXBuildFile; fileRef = 6A89A1D627A986D10094D112 /* MATH.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,12 @@
 /* Begin PBXFileReference section */
 		6A89A1C727A9866B0094D112 /* Embedded Systems Diploma */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Embedded Systems Diploma"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A89A1CA27A9866B0094D112 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		6A89A1D127A986D10094D112 /* ARRAY.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ARRAY.c; path = ../../Libraries/ARRAY.c; sourceTree = "<group>"; };
+		6A89A1D227A986D10094D112 /* MATH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MATH.h; path = ../../Libraries/MATH.h; sourceTree = "<group>"; };
+		6A89A1D327A986D10094D112 /* STRINGS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STRINGS.h; path = ../../Libraries/STRINGS.h; sourceTree = "<group>"; };
+		6A89A1D427A986D10094D112 /* ARRAY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ARRAY.h; path = ../../Libraries/ARRAY.h; sourceTree = "<group>"; };
+		6A89A1D527A986D10094D112 /* STRINGS.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = STRINGS.c; path = ../../Libraries/STRINGS.c; sourceTree = "<group>"; };
+		6A89A1D627A986D10094D112 /* MATH.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = MATH.c; path = ../../Libraries/MATH.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +66,12 @@
 		6A89A1C927A9866B0094D112 /* Embedded Systems Diploma */ = {
 			isa = PBXGroup;
 			children = (
+				6A89A1D127A986D10094D112 /* ARRAY.c */,
+				6A89A1D427A986D10094D112 /* ARRAY.h */,
+				6A89A1D627A986D10094D112 /* MATH.c */,
+				6A89A1D227A986D10094D112 /* MATH.h */,
+				6A89A1D527A986D10094D112 /* STRINGS.c */,
+				6A89A1D327A986D10094D112 /* STRINGS.h */,
 				6A89A1CA27A9866B0094D112 /* main.c */,
 			);
 			path = "Embedded Systems Diploma";
@@ -119,7 +134,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A89A1D827A986D10094D112 /* STRINGS.c in Sources */,
+				6A89A1D927A986D10094D112 /* MATH.c in Sources */,
 				6A89A1CB27A9866B0094D112 /* main.c in Sources */,
+				6A89A1D727A986D10094D112 /* ARRAY.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
