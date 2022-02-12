@@ -32,11 +32,11 @@ int is_prime(int number)
     return is_prime;
 }
 
-void swap(int *a, int *b)
+void swap(int *x, int *y)
 {
-    *b += *a;
-    *a = *b - *a;
-    *b = *b - *a;
+    int temp = *x;
+    *x = *y;
+    *y = temp;
 }
 
 int is_powerof_three(int number)

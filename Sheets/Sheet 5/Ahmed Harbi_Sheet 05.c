@@ -139,6 +139,7 @@ int get_solo(const int *array_ptr, const int array_size)
  *
  * Problem.04:
  *      -->  repeat Q3 but array is sorted (try less than O(n)).
+ *           array {1,1,2,2,4,4,70,70,73,80,80,81,81} ->73.
  *
  * @author: Ahmed Harbi
  * @date:   Feb 12th, 2022
