@@ -144,42 +144,36 @@ int get_solo(const int *array_ptr, const int array_size)
  * @date:   Feb 12th, 2022
  ******************************************************************************/
 
-int binary_search(const int *array_ptr, int target, int l, int h)
+int get_solo_sorted(const int *array_ptr, int l, int h)
 {
-    if (h < l)
-    {
-        return -1;
-    }
 
     int mid = (l + h) / 2;
-    if (array_ptr[mid] == target)
+    if ((array_ptr[mid] != array_ptr[mid + 1]) && (array_ptr[mid] != array_ptr[mid - 1]))
     {
-        return mid;
+        return array_ptr[mid];
     }
-    else if (array_ptr[mid] > target)
+    if ((mid % 2) == 0)
     {
-        return binary_search(array_ptr, target, l, mid - 1);
-    }
-    else
-    {
-        return binary_search(array_ptr, target, mid + 1, h);
-    }
-}
-
-int get_solo_binary(const int *array_ptr, const int size)
-{
-    for (int i = 0; i < size - 1; i++)
-    {
-        if (binary_search(array_ptr, array_ptr[i], i + 1, size - 1) == -1)
+        if (array_ptr[mid] == array_ptr[mid + 1])
         {
-            return array_ptr[i];
+            return get_solo_sorted(array_ptr, mid + 1, h);
         }
         else
         {
-            i++;
+            return get_solo_sorted(array_ptr, l, mid - 1);
         }
     }
-    return 0;
+    else
+    {
+        if (array_ptr[mid] == array_ptr[mid - 1])
+        {
+            return get_solo_sorted(array_ptr, mid + 1, h);
+        }
+        else
+        {
+            return get_solo_sorted(array_ptr, l, mid - 1);
+        }
+    }
 }
 
 /******************************************************************************
@@ -232,8 +226,8 @@ int get_most_repeated_mono(const int *array_ptr, const int *size)
  * Sheet.05
  *
  * Problem.06:
- *      --> Write c function to find the first repeated char in string 
- *          (try in O(n)). 
+ *      --> Write c function to find the first repeated char in string
+ *          (try in O(n)).
  *          "ahmed selem" ->e.
  *
  * @author: Ahmed Harbi
@@ -260,8 +254,8 @@ char most_repeated_character(const char *str)
  * Sheet.05
  *
  * Problem.07:
- *      --> Write c function to copy string to string without copy repeated 
- *          characters try (O(n)).  
+ *      --> Write c function to copy string to string without copy repeated
+ *          characters try (O(n)).
  *          "ahmed selem kamel"->"ahmed slk".
  *
  * @author: Ahmed Harbi
