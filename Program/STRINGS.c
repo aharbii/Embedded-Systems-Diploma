@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "STRINGS.h"
 
 int char_is_digit(char c)

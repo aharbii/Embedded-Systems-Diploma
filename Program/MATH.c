@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "MATH.h"
-#include "ARRAY.h"
 
 int get_power(int base, int exponent)
 {

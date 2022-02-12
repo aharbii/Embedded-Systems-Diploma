@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "MATH.h"
+#include "ARRAY.h"
 
 void array_print(const int *array_ptr, const int *size)
 {

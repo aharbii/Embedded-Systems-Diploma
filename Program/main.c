@@ -3,44 +3,7 @@
 #include "ARRAY.h"
 #include "STRINGS.h"
 #include "MATH.h"
-
-void bubble_sort(int *arr, int size)
-{
-    int not_sorted = 1;
-    for (int i = 1; (i < size) && (not_sorted); i++)
-    {
-        not_sorted = 0;
-        for (int j = 0; j < size - i; j++)
-        {
-            if (arr[j] > arr[j + 1])
-            {
-                swap(&arr[j], &arr[j + 1]);
-                not_sorted = 1;
-            }
-        }
-    }
-}
-
-void selection_sort(int *arr, int size)
-{
-    int max = arr[0];
-    int index = 0;
-    for (int i = 0; i < size; i++)
-    {
-        max = arr[0];
-        index = 0;
-        for (int j = 0; j < size - i; j++)
-        {
-            if (arr[j] > max)
-            {
-                max = arr[j];
-                index = j;
-            }
-        }
-        swap(&arr[index], &arr[size - i - 1]);
-    }
-    
-}
+#include "SORTING.h"
 
 int main()
 {

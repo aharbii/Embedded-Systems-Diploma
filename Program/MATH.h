@@ -1,6 +1,12 @@
 #ifndef _MATH_H_
 #define _MATH_H_
 
+#include <stdio.h>
+#include <stdlib.h>
+#include "ARRAY.h"
+#include "SORTING.h"
+#include "STRINGS.h"
+
 int get_power(int base, int exponent);
 int is_prime(int number);
 void swap(int *a, int *b);
