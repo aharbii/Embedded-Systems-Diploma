@@ -8,7 +8,7 @@ void array_print(const int *array_ptr, const int *size)
     printf("Array: ");
     for (int i = 0; i < *size; i++)
     {
-        printf("%2d, ", array_ptr[i]);
+        printf("%2d ", array_ptr[i]);
     }
     printf("\n");
 }
