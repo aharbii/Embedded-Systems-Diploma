@@ -277,3 +277,57 @@ void copy_solo(const char *str, char *copy)
     }
     copy[k] = '\0';
 }
+
+/******************************************************************************
+ * Sheet.05
+ *
+ * Problem.08:
+ *      --> Write C function to take an array and if it finds a number "given"
+ *          makes the previous elements in a new array and returns it
+ *          (try to optimize).
+ *
+ * @author: Ahmed Harbi
+ * @date:   Feb 12th, 2022
+ ******************************************************************************/
+
+int *get_pre(int *array_ptr, int size, int *return_size, int key)
+{
+    *return_size = size;
+    int *ans = (int *)malloc(*return_size * sizeof(int));
+    int k = 0;
+    int i = 0;
+    int not_found = 1;
+    while ((i < size) && (not_found))
+    {
+        if (array_ptr[i] == key)
+        {
+            not_found = 0;
+        }
+        else
+        {
+            ans[k++] = array_ptr[i++];
+        }
+    }
+    *return_size = k;
+    return ans;
+}
+
+/******************************************************************************
+ * Sheet.05
+ *
+ * Problem.09:
+ *      -->Write a c function to swap the two bytes of a short int
+ *         (n=0xFE20 ->0X20FE) use 2 methods.
+ *
+ * @author: Ahmed Harbi
+ * @date:   Feb 12th, 2022
+ ******************************************************************************/
+
+void swap_bytes(unsigned short *x)
+{
+    unsigned char first_part = (0xFF) & (*x);
+    unsigned char second_part = ((0xFF << 8) & (*x)) >> 8;
+
+    *(char *)x = second_part;
+    *((char *)x + 1) = first_part;
+}
