@@ -331,3 +331,10 @@ void swap_bytes(unsigned short *x)
     *(char *)x = second_part;
     *((char *)x + 1) = first_part;
 }
+
+void swap_bytes_second(unsigned short *x)
+{
+    unsigned char first_part = (0xFF) & (*x);
+    unsigned char second_part = ((0xFF << 8) & (*x)) >> 8;
+    *x = (first_part << 8) | second_part;
+}
