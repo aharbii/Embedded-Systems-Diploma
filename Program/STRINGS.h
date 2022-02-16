@@ -1,12 +1,6 @@
 #ifndef _STRINGS_H_
 #define _STRINGS_H_
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "MATH.h"
-#include "SORTING.h"
-#include "ARRAY.h"
-
 #define LOWER_TO_UPPER_DIFF 'a' - 'A'
 #define LOWER_ALPHA_START 'a'
 #define UPPER_ALPHA_START 'A'
@@ -16,6 +10,8 @@
 #define MAX_ASCII 128
 #define DECIMAL_BASE 10
 #define FLOAT_PRECISION 6
+
+
 
 int char_is_digit(char c);
 int char_is_lower(char c);

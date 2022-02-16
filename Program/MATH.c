@@ -1,4 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "MATH.h"
+#include "ARRAY.h"
 
 int get_power(int base, int exponent)
 {
@@ -29,7 +32,7 @@ int is_prime(int number)
     return is_prime;
 }
 
-void swap(int *x, int *y)
+void swap_int(int *x, int *y)
 {
     int temp = *x;
     *x = *y;

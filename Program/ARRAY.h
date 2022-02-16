@@ -1,12 +1,6 @@
 #ifndef _ARRAY_H_
 #define _ARRAY_H_
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "MATH.h"
-#include "SORTING.h"
-#include "STRINGS.h"
-
 #define ARRAY_SIZE(array) sizeof((array)) / sizeof((array)[0])
 
 void array_print(const int *array_ptr, const int *size);
