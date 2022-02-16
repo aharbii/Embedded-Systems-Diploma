@@ -8,7 +8,7 @@ void array_print(const int *array_ptr, const int *size)
     printf("Array: ");
     for (int i = 0; i < *size; i++)
     {
-        printf("%2d, ", array_ptr[i]);
+        printf("%2d ", array_ptr[i]);
     }
     printf("\n");
 }
@@ -103,7 +103,7 @@ int array_get_between(int a, int b, int *array_ptr)
     /* O(n) */
     if (a > b)
     {
-        swap(&a, &b);
+        swap_int(&a, &b);
     }
     else if(a == b)
     {
@@ -182,7 +182,7 @@ void array_reverse_swap(int *array_ptr, const int *size)
     /* O(n) */
     for (int i = 0, j = (*size - 1); i < j; i++, j--)
     {
-        swap(&array_ptr[i], &array_ptr[j]);
+        swap_int(&array_ptr[i], &array_ptr[j]);
     }
 }
 
@@ -433,7 +433,7 @@ int array_improved_linear_search(int *array_ptr, int *size, int key)
     {
         if (key == array_ptr[i])
         {
-            swap(&array_ptr[i], &array_ptr[0]);
+            swap_int(&array_ptr[i], &array_ptr[0]);
             return i;
         }
     }
@@ -611,7 +611,7 @@ void array_rearrange(int *array_ptr, int *size)
         }
         if (i < j)
         {
-            swap(&array_ptr[i], &array_ptr[j]);
+            swap_int(&array_ptr[i], &array_ptr[j]);
         }
     }
 }
@@ -980,7 +980,7 @@ void array_swap_after_zero(int *array_ptr)
 
     for (int k = 0; k < 3; k++)
     {
-        swap(&array_ptr[++i], &array_ptr[++j]);
+        swap_int(&array_ptr[++i], &array_ptr[++j]);
     }
     
 }
