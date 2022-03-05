@@ -1,6 +1,13 @@
 #ifndef _STRINGS_H_
 #define _STRINGS_H_
 
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "ARRAY.h"
+#include "MATH.h"
+#include "SORTING.h"
+
 #define LOWER_TO_UPPER_DIFF 'a' - 'A'
 #define LOWER_ALPHA_START 'a'
 #define UPPER_ALPHA_START 'A'

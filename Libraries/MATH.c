@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "MATH.h"
-#include "ARRAY.h"
 
 int get_power(int base, int exponent)
 {
@@ -87,4 +84,34 @@ int fibonacci_iter(int n)
         t1 = s;
     }
     return s;
+}
+
+int reverse_int(int x)
+{
+    int ans = 0;
+    int is_negative = 0;
+    if (x < 0)
+    {
+        is_negative = 1;
+        if (x <= INT32_MIN)
+        {
+            return 0;
+        }
+        x *= -1;
+    }
+    while (x)
+    {
+        if ((long)ans * 10 > INT32_MAX)
+        {
+            return 0;
+        }
+        ans *= 10;
+        ans += (x % 10);
+        x /= 10;
+    }
+    if (is_negative)
+    {
+        ans *= -1;
+    }
+    return ans;
 }
