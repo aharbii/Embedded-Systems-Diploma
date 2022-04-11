@@ -1,5 +1,5 @@
 /******************************************************************************
- * FILE: BIT_MANIPULATION.h
+ * FILE: BIT_MATH.h
  * DESCRIPTION:  C header file contains declration and documentation
  *               for macros like function that performs bitwise operations
  *               on registers
@@ -35,8 +35,8 @@
  * DATE: Jan 2022
  *****************************************************************************/
 
-#ifndef _BIT_MANIPULATION_H_
-#define _BIT_MANIPULATION_H_
+#ifndef _BIT_MATH_H_
+#define _BIT_MATH_H_
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -278,4 +278,4 @@
 
 #define REG_IS_ODD_BITWISE(REG) (LEAST_SIGNIFICANT_BIT((REG)) ? 1 : 0)
 
-#endif /* _BIT_MANIPULATION_H_ */
+#endif /* _BIT_MATH_H_ */

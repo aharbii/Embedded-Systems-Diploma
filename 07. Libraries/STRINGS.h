@@ -54,7 +54,7 @@
 #include <stdlib.h>
 
 #include "ARRAY.h"
-#include "BIT_MANIPULATION.h"
+#include "BIT_MATH.h"
 #include "MATH.h"
 #include "SORTING.h"
 
@@ -68,8 +68,8 @@
 #define DECIMAL_BASE 10
 #define FLOAT_PRECISION 6
 #define ORDERIAL_NUMBER(NUMBER) ((NUMBER) == 1 ? "st" : (NUMBER) == 2 ? "nd" \
-                                                        : (NUMBER) == 3   ? "rd" \
-                                                                              : "th")
+                                                    : (NUMBER) == 3   ? "rd" \
+                                                                      : "th")
 
 int char_is_digit(char c);
 int char_is_lower(char c);

@@ -1,4 +1,4 @@
-#include "BIT_MANIPULATION.h"
+#include "BIT_MATH.h"
 
 void decimal_to_binary(int n)
 {

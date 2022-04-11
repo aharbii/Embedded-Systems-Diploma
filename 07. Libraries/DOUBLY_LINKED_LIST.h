@@ -23,7 +23,7 @@
 #include <stdlib.h>
 
 #include "ARRAY.h"
-#include "BIT_MANIPULATION.h"
+#include "BIT_MATH.h"
 #include "LINEAR_LINKED_LIST.h"
 #include "MATH.h"
 #include "SORTING.h"

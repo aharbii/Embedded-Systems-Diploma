@@ -41,7 +41,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "BIT_MANIPULATION.h"
+#include "BIT_MATH.h"
 #include "MATH.h"
 #include "SORTING.h"
 #include "STRINGS.h"

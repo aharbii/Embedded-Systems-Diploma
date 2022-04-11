@@ -8,7 +8,7 @@
  *                  --> Is Full
  *
  *                  --> Display Queue
- * 
+ *
  *              Manipulations:
  *                  --> Create Queue
  *
@@ -26,7 +26,7 @@
 #include <stdlib.h>
 
 #include "ARRAY.h"
-#include "BIT_MANIPULATION.h"
+#include "BIT_MATH.h"
 #include "CIRCULAR_LINKED_LIST.h"
 #include "DOUBLY_LINKED_LIST.h"
 #include "LINEAR_LINKED_LIST.h"

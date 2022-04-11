@@ -29,7 +29,7 @@
  *                  --> Reverse Elements
  *                  --> Reverse Nodes
  *                  --> Rotate Nodes
- * 
+ *
  *                  --> Concatenate
  *                  --> Merging
  *
@@ -44,7 +44,7 @@
 #include <stdlib.h>
 
 #include "ARRAY.h"
-#include "BIT_MANIPULATION.h"
+#include "BIT_MATH.h"
 #include "MATH.h"
 #include "SORTING.h"
 #include "STRINGS.h"
@@ -79,7 +79,6 @@ LinearLinkedListNode *linear_linked_list_remove_duplicates(LinearLinkedListNode 
 void linear_linked_list_reverse_elements(LinearLinkedListNode *head);
 LinearLinkedListNode *linear_linked_list_reverse_nodes(LinearLinkedListNode *head);
 LinearLinkedListNode *linear_linked_list_rotate(LinearLinkedListNode *head, int rotations);
-
 
 LinearLinkedListNode *linear_linked_list_concatenate(LinearLinkedListNode *p, LinearLinkedListNode *q, LinearLinkedListNode *res);
 LinearLinkedListNode *linear_linked_list_merge(LinearLinkedListNode *p, LinearLinkedListNode *q, LinearLinkedListNode *ans);

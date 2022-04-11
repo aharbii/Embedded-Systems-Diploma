@@ -12,7 +12,7 @@
  *              Manipulations:
  *                  --> Swapping Two Integers
  *                  --> Swapping Two Pointers
- * 
+ *
  *                  --> Power
  *                  --> Summation
  *                  --> Get Fibonacci of Integer
@@ -29,7 +29,7 @@
 #include <stdlib.h>
 
 #include "ARRAY.h"
-#include "BIT_MANIPULATION.h"
+#include "BIT_MATH.h"
 #include "SORTING.h"
 #include "STRINGS.h"
 
@@ -45,6 +45,5 @@ int get_power(int base, int exponent);
 int sum_formula(int n);
 int fibonacci_iter(int n);
 int reverse_int(int x);
-
 
 #endif /* _MATH_H_ */
