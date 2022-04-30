@@ -35,7 +35,7 @@
 
 #define SIZE_OF(x) (char *)(&(x) + 1) - (char *)&(x)
 
-int is_powerof_three(int number);
+int is_power_of_three(int number);
 int is_prime(int number);
 
 void swap_int(int *x, int *y);

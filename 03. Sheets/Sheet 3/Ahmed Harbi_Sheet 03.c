@@ -203,79 +203,39 @@ void array_reverse_swap(int *array_ptr, const int *size)
 void array_swap(int *first_array, int *first_size, int *second_array, int *second_size)
 {
     /* O(n) */
-    int temp[100] = {0};
-    int temp_size = 0;
-
-    if (*first_size > *second_size)
+    if (first_size > second_size)
     {
-        int diff = *first_size - *second_size;
-        temp_size = *first_size;
-        for (int i = 0; i < *first_size; i++)
-        {
-            temp[i] = first_array[i];
-        }
-        for (int i = 0; i < diff; i++)
-        {
-            array_pop(first_array, first_size);
-        }
-
-        for (int j = 0; j < *second_size; j++)
-        {
-            first_array[j] = second_array[j];
-        }
         int i = 0;
-        for (; i < *second_size; i++)
+        for (i = 0; i < *second_size; i++)
         {
-            second_array[i] = temp[i];
+            swap(&first_array[i], &second_array[i]);
         }
-
-        for (int j = 0; j < diff; j++)
+        while (i < *first_size)
         {
-            array_append(second_array, second_size, temp[j + i]);
+            second_array[i] = first_array[i];
+            i++;
         }
+        swap(first_size, second_size);
     }
-    else if (*first_size < *second_size)
+    else if (second_size > first_size)
     {
-        int diff = *second_size - *first_size;
-        temp_size = *second_size;
-        for (int i = 0; i < *second_size; i++)
-        {
-            temp[i] = second_array[i];
-        }
-        for (int i = 0; i < diff; i++)
-        {
-            array_pop(second_array, second_size);
-        }
-
-        for (int j = 0; j < *first_size; j++)
-        {
-            second_array[j] = first_array[j];
-        }
         int i = 0;
-        for (; i < *first_size; i++)
+        for (i = 0; i < *first_size; i++)
         {
-            first_array[i] = temp[i];
+            swap(&first_array[i], &second_array[i]);
         }
-
-        for (int j = 0; j < diff; j++)
+        while (i < *second_size)
         {
-            array_append(first_array, first_size, temp[j + i]);
+            first_array[i] = second_array[i];
+            i++;
         }
+        swap(first_size, second_size);
     }
     else
     {
-        temp_size = *second_size;
-        for (int i = 0; i < *second_size; i++)
-        {
-            temp[i] = second_array[i];
-        }
-        for (int j = 0; j < *first_size; j++)
-        {
-            second_array[j] = first_array[j];
-        }
         for (int i = 0; i < *first_size; i++)
         {
-            first_array[i] = temp[i];
+            swap(&first_array[i], &second_array[i]);
         }
     }
 }
@@ -473,28 +433,24 @@ void array_swap_after_zero(int *array_ptr)
  * @date:   Jan 19th, 2022
  ******************************************************************************/
 
-int array_get_greatest_difference(const int *array_ptr, const int *size)
+int array_get_greatest_difference(const int *arr, const int size)
 {
-    int min = array_get_min(array_ptr, size);
-    int index = 0;
-
-    while (array_ptr[index] != min)
+    int max = 0;
+    int max_diff = 0;
+    for (int i = size - 1; i >= 0; i--)
     {
-        index++;
+        if (arr[i] > max)
+        {
+            max = arr[i];
+        }
+
+        int temp = max - arr[i];
+        if (temp > max_diff)
+        {
+            max_diff = temp;
+        }
     }
-
-    int new_size = *size - 1;
-
-    if (index == (*size - 1))
-    {
-        return array_get_greatest_difference(array_ptr, &new_size);
-    }
-
-    new_size = *size - index;
-    int max = array_get_max(&array_ptr[index], &new_size);
-    int greatest_diff = max - min;
-
-    return greatest_diff;
+    return max_diff;
 }
 
 /******************************************************************************

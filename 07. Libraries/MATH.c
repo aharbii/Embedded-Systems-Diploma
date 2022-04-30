@@ -36,20 +36,20 @@ void swap_int(int *x, int *y)
     *y = temp;
 }
 
-int is_powerof_three(int number)
+int is_power_of_three(int number)
 {
-    int reminder = 0;
-    while (number > 1)
-    {
-        reminder = number % 3;
-        number /= 3;
-    }
-
-    if ((reminder == 0) && (number != 0))
+    if (number == 1)
     {
         return 1;
     }
 
+    for (int i = 1; pow(3, i) <= number; i++)
+    {
+        if (pow(3, i) == number)
+        {
+            return 1;
+        }
+    }
     return 0;
 }
 
