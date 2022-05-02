@@ -15,23 +15,5 @@
 int main(void)
 {
 
-    int x = 0;
-    char *hello = (char *)malloc(100);
-    string_scan(hello, 100);
-    string_print(hello);
-    string_scan(hello, 100);
-    string_print(hello);
-    string_scan(hello, 100);
-    string_print(hello);
-    string_scan(hello, 100);
-    string_print(hello);
-    string_scan(hello, 100);
-    string_print(hello);
-    string_scan(hello, 100);
-    string_print(hello);
-    string_scan(hello, 100);
-    string_print(hello);
-    string_scan(hello, 100);
-    string_print(hello);
     return 0;
 }
