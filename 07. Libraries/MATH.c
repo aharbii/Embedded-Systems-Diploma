@@ -43,9 +43,9 @@ int is_power_of_three(int number)
         return 1;
     }
 
-    for (int i = 1; pow(3, i) <= number; i++)
+    for (int i = 1; get_power(3, i) <= number; i++)
     {
-        if (pow(3, i) == number)
+        if (get_power(3, i) == number)
         {
             return 1;
         }

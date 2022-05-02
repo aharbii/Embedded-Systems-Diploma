@@ -12,33 +12,25 @@
 #include "STACK.h"
 #include "STRINGS.h"
 
-int main()
+int main(void)
 {
 
     int x = 0;
     char *hello = (char *)malloc(100);
-    scanf("%d", &x);
     string_scan(hello, 100);
     string_print(hello);
-    scanf("%d", &x);
     string_scan(hello, 100);
     string_print(hello);
-    scanf("%d", &x);
     string_scan(hello, 100);
     string_print(hello);
-    scanf("%d", &x);
     string_scan(hello, 100);
     string_print(hello);
-    scanf("%d", &x);
     string_scan(hello, 100);
     string_print(hello);
-    scanf("%d", &x);
     string_scan(hello, 100);
     string_print(hello);
-    scanf("%d", &x);
     string_scan(hello, 100);
     string_print(hello);
-    scanf("%d", &x);
     string_scan(hello, 100);
     string_print(hello);
     return 0;
