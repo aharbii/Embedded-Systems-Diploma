@@ -1,0 +1,9 @@
+[submodule "09. Interfacing"]
+	path = 09. Interfacing
+	url = https://github.com/aharbii/AVR-Labs
+[submodule "06. Projects/School System"]
+	path = 06. Projects/School System
+	url = https://github.com/aharbii/School-System
+[submodule "06. Projects/Sudoku Game"]
+	path = 06. Projects/Sudoku Game
+	url = https://github.com/aharbii/Sudoku-Game
