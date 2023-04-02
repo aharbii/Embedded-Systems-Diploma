@@ -367,7 +367,7 @@ void triangle_get_type(int *length_array, char *triangle_type)
 {
     if (triangle_is_valid(length_array))
     {
-        if (length_array[0] == length_array[1] == length_array[2])
+        if ((length_array[0] == length_array[1]) && (length_array[1] == length_array[2]))
         {
             string_copy(triangle_type, "Equilateral triangle");
         }
